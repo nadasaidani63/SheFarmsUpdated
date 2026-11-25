@@ -10,7 +10,7 @@ Open PowerShell in the SheFarms project folder. Create the Vite environment file
 Copy-Item .env.example .env.local
 ```
 
-The local defaults are `VITE_API_URL=http://127.0.0.1:8000` for the existing SheFarms backend and `VITE_SOIL_SENSOR_API_URL=http://127.0.0.1:8001` for the simulator. The simulator startup script creates `soil_sensor/.env` from `soil_sensor/.env.example` if it does not exist.
+The local defaults are `VITE_API_URL=http://127.0.0.1:8000` for the existing SheFarms backend and `VITE_SOIL_SENSOR_API_URL=/soil-api` for the simulator. Vite proxies `/soil-api/*` to `http://127.0.0.1:8001/*` during development, avoiding browser CORS and localhost hostname differences. The simulator startup script creates `soil_sensor/.env` from `soil_sensor/.env.example` if it does not exist.
 
 ## Start the services
 
@@ -51,4 +51,4 @@ In Soil Analysis, configure sensor name, field, plot, interval, and generated ra
 
 In Calendar, create tasks or activities, or schedule a virtual soil reading. Scheduled runs execute while the simulator is running. When a scheduled run is missed while the service is down, it is marked failed when the service starts; use Retry after the service is online. A planned event is not shown as a measurement until the simulator has created the reading.
 
-The simulator CORS allowlist defaults to `http://localhost:5173` and `http://127.0.0.1:5173`. Configure it in `soil_sensor/.env` with a comma-separated `SOIL_SENSOR_CORS_ORIGINS` value if your frontend uses another origin. Restart Vite after changing `.env.local` and restart the simulator after changing `soil_sensor/.env`.
+The simulator CORS allowlist defaults to `http://localhost:5173` and `http://127.0.0.1:5173`. Configure it in `soil_sensor/.env` with a comma-separated `SOIL_SENSOR_CORS_ORIGINS` value if another client needs direct browser access. Local Vite development uses its same-origin proxy. Restart Vite after changing `.env.local` and restart the simulator after changing `soil_sensor/.env`.

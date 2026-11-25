@@ -1,6 +1,15 @@
-export const SOIL_SENSOR_API_URL = (
-  import.meta.env.VITE_SOIL_SENSOR_API_URL || 'http://127.0.0.1:8001'
-).replace(/\/$/, '');
+const configuredApiUrl = import.meta.env.VITE_SOIL_SENSOR_API_URL?.replace(/\/$/, '');
+const localSimulatorUrls = new Set(['http://127.0.0.1:8001', 'http://localhost:8001']);
+const useViteProxy = import.meta.env.DEV
+  && (!configuredApiUrl || configuredApiUrl === '/soil-api' || localSimulatorUrls.has(configuredApiUrl));
+
+// In development, proxy local requests through Vite so browser hostname
+// differences and CORS settings cannot block the simulator connection.
+export const SOIL_SENSOR_API_URL = useViteProxy
+  ? '/soil-api'
+  : configuredApiUrl && configuredApiUrl !== '/soil-api'
+    ? configuredApiUrl
+    : 'http://127.0.0.1:8001';
 
 export async function soilSensorRequest(path, options = {}) {
   let response;

@@ -97,7 +97,7 @@ A stored reading contains `timestamp`, `sensor_id`, `field_name`, `plot_name`, a
 
 ## SheFarms integration
 
-The SheFarms Soil Analysis page calls this API using `VITE_SOIL_SENSOR_API_URL` (default `http://127.0.0.1:8001`). It loads stored readings into the metrics, history chart, and threshold-based recommendations. Sensor controls support configuration, one-off simulated readings, manual demonstration readings, and starting or stopping automatic mode. The dashboard explicitly labels this as a virtual simulator, not physical hardware or machine-learning analysis.
+The SheFarms Soil Analysis page uses `VITE_SOIL_SENSOR_API_URL=/soil-api` in development. Vite proxies these same-origin browser requests to this API on port 8001. For a separately hosted frontend, set the variable to the deployed API URL and configure CORS accordingly. The page loads stored readings into the metrics, history chart, and threshold-based recommendations. Sensor controls support configuration, one-off simulated readings, manual demonstration readings, and starting or stopping automatic mode. The dashboard explicitly labels this as a virtual simulator, not physical hardware or machine-learning analysis.
 
 The Calendar page stores tasks and activities through `/calendar/events` and can schedule virtual sensor runs. A planned run is not a measurement; it is shown as completed only after the simulator generates and saves its reading. Scheduled runs execute only while this API process is running. Failed runs are visible and can be retried.
 
@@ -156,7 +156,7 @@ Calendar events are stored in SQLite, so closing the browser or React app does n
 
 The service loads `.env` from the simulator project root (the directory containing `requirements.txt`), independent of the current PowerShell working directory. A relative `SOIL_SENSOR_DB` path is resolved against that same project root; an absolute path is used as supplied. The default CORS allowlist includes both `http://localhost:5173` and `http://127.0.0.1:5173`. Set `SOIL_SENSOR_CORS_ORIGINS` to a comma-separated allowlist to override it.
 
-The frontend can define `VITE_SOIL_SENSOR_API_URL=http://127.0.0.1:8001` in a Vite environment file. Restart Vite after changing Vite environment variables. The current SheFarms repository has this integration in place.
+The frontend can define `VITE_SOIL_SENSOR_API_URL=/soil-api` in a Vite environment file for local development, or use the deployed API URL outside local development. Restart Vite after changing Vite environment variables. The current SheFarms repository has this integration in place.
 
 ### Run all local services (PowerShell)
 

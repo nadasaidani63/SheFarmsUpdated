@@ -130,7 +130,7 @@ The Vite app reads `.env.local` at its root. The repository includes `.env.examp
 
 ```dotenv
 VITE_API_URL=http://127.0.0.1:8000
-VITE_SOIL_SENSOR_API_URL=http://127.0.0.1:8001
+VITE_SOIL_SENSOR_API_URL=/soil-api
 ```
 
 The backend supports these environment variables:
@@ -142,7 +142,7 @@ The backend supports these environment variables:
 | `MODEL_PATH` | `model/best.pt` | YOLO checkpoint path; relative paths resolve from `model/` |
 | `AUTH_DB_PATH` | `model/shefarms.sqlite3` | SQLite database for users, sessions and transport requests |
 
-The soil-simulator settings and CORS configuration are documented in [`soil_sensor/README.md`](soil_sensor/README.md). Vite environment changes require restarting the dev server. Backend and simulator settings require restarting their service.
+During development, Vite proxies `/soil-api/*` to the simulator at `http://127.0.0.1:8001/*`, keeping browser requests same-origin. For a separately hosted frontend, set `VITE_SOIL_SENSOR_API_URL` to the deployed API URL and configure simulator CORS. The soil-simulator settings are documented in [`soil_sensor/README.md`](soil_sensor/README.md). Vite environment changes require restarting the dev server. Backend and simulator settings require restarting their service.
 
 ## API reference
 
