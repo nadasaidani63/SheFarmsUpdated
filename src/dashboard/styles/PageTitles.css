@@ -1,0 +1,47 @@
+/* Styles pour tous les titres des pages du dashboard */
+
+/* Titre principal de page */
+.page-main-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ec4899;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Titres de section */
+.section-title-pink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ec4899;
+}
+
+/* Container pour les titres de section */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Style pour les icônes des titres */
+.title-icon {
+  color: #ec4899;
+}
+
+/* Sous-titres */
+.subsection-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ec4899;
+  margin: 15px 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,0 +1,85 @@
+:root {
+  --shefarms-sand: #f8efe0;
+  --shefarms-paper: #fcf7ee;
+  --shefarms-forest: #38291e;
+  --shefarms-forest-deep: #2b1d15;
+  --shefarms-terracotta: #a3451a;
+  --shefarms-terracotta-bright: #bd5427;
+  --shefarms-gold: #c9983d;
+  --shefarms-sage: #858b68;
+  --shefarms-ink: #392a20;
+  --shefarms-muted: #756656;
+  --shefarms-line: #e2d7c4;
+}
+
+body { background: var(--shefarms-sand); color: var(--shefarms-ink); font-family: 'Manrope', 'Segoe UI', sans-serif; }
+.public-page { min-height: 100vh; background: var(--shefarms-sand); color: var(--shefarms-ink); font-family: 'Manrope', 'Segoe UI', sans-serif; }
+.public-page .container { width: min(100%, 1240px); max-width: 1240px; padding: 0 22px; }
+.public-page .page-content { padding-top: 0; }
+.public-page .page-hero { padding: 76px 0 64px; background: #eee4d1 url('/images/ragouj-courtyard.jpg') center 48% / cover no-repeat; position: relative; }
+.public-page .page-hero::before { position: absolute; inset: 0; content: ''; background: rgba(248,239,224,.86); }
+.public-page .page-hero .container { position: relative; z-index: 1; }
+.public-page .page-hero-content { max-width: 850px; margin: auto; text-align: center; }
+.public-page .page-title, .public-page h1, .public-page .section-title { color: var(--shefarms-forest) !important; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; letter-spacing: -.025em; }
+.public-page .page-title { font-size: clamp(2.7rem, 5vw, 4.7rem); line-height: 1.03; }
+.public-page .page-title .highlight { color: var(--shefarms-terracotta); }
+.public-page .page-title .highlight::after { display: none; }
+.public-page .page-subtitle { max-width: 720px; margin: 17px auto 0; color: var(--shefarms-muted); font-size: 1.04rem; line-height: 1.75; }
+.public-page .about, .public-page .features, .public-page .contact, .public-page .values, .public-page .faq { padding: 64px 0; background: var(--shefarms-sand); }
+.public-page .section-title { margin-bottom: 24px; font-size: clamp(2rem, 3.6vw, 3.1rem); }
+.public-page .about-content { gap: 54px; align-items: center; }
+.public-page .about-description, .public-page .contact-info > p, .public-page .faq-item p { color: var(--shefarms-muted); line-height: 1.8; }
+.public-page .stats-grid { border-color: var(--shefarms-line); }
+.public-page .stat-item { background: var(--shefarms-paper); }
+.public-page .stat-number { color: var(--shefarms-terracotta); }
+.public-page .image-placeholder { border-radius: 14px; box-shadow: 0 18px 40px rgba(56,41,30,.16); }
+.public-page .image-placeholder img { min-height: 360px; object-fit: cover; }
+.public-page .values { background: #eee4d1; }
+.public-page .value-card, .public-page .feature-card, .public-page .faq-item { border: 1px solid var(--shefarms-line); border-radius: 14px; background: var(--shefarms-paper); box-shadow: 0 8px 24px rgba(56,41,30,.055); }
+.public-page .value-card:hover, .public-page .feature-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(56,41,30,.1); }
+.public-page .value-icon, .public-page .feature-icon-large { color: var(--shefarms-terracotta); background: #eee4d1; }
+.public-page .value-card h3, .public-page .feature-card h3, .public-page .contact-info h3, .public-page .contact-form h3, .public-page .faq-item h4 { color: var(--shefarms-forest); font-family: 'Cormorant Garamond', Georgia, serif; }
+.public-page .value-card p, .public-page .feature-card p, .public-page .feature-benefits { color: var(--shefarms-muted); }
+.public-page .feature-benefits li::before { color: var(--shefarms-terracotta); }
+.public-page .contact-content { gap: 28px; align-items: stretch; }
+.public-page .contact-info, .public-page .contact-form { border: 1px solid var(--shefarms-line); border-radius: 14px; background: var(--shefarms-paper); box-shadow: 0 8px 24px rgba(56,41,30,.055); }
+.public-page .contact-icon { color: var(--shefarms-terracotta); background: #eee4d1; }
+.public-page .form-input, .public-page .form-textarea { border-color: #d9cbb7; border-radius: 7px; background: #fffdf8; color: var(--shefarms-ink); }
+.public-page .form-input:focus, .public-page .form-textarea:focus { border-color: var(--shefarms-terracotta); outline-color: var(--shefarms-terracotta); }
+.public-page .btn-green, .public-page .btn-green-old { border: 0; border-radius: 28px; background: var(--shefarms-terracotta); color: #fff9ee; }
+.public-page .btn-green:hover, .public-page .btn-green-old:hover { background: #8d3915; }
+.public-page .cta { padding: 60px 0; background: var(--shefarms-forest); color: #fff9ee; }
+.public-page .cta h2 { color: #fff9ee; font-family: 'Cormorant Garamond', Georgia, serif; }
+.public-page .cta p { color: rgba(255,249,238,.78); }
+.public-page .footer { border-top: 1px solid var(--shefarms-line); background: var(--shefarms-sand); color: var(--shefarms-muted); }
+.public-page .footer-brand-name { color: var(--shefarms-forest); font-family: 'Cormorant Garamond', Georgia, serif; }
+.public-page .footer-logo { object-fit: cover; }
+
+.auth-page { min-height: 100vh; background: var(--shefarms-sand); color: var(--shefarms-ink); font-family: 'Manrope', 'Segoe UI', sans-serif; }
+.auth-brand { position: absolute; z-index: 3; top: 20px; left: clamp(18px, 4vw, 60px); display: inline-flex; align-items: center; gap: 10px; color: var(--shefarms-forest); text-decoration: none; }
+.auth-brand img { width: 42px; height: 42px; border: 1px solid #ddc9a6; border-radius: 50%; object-fit: cover; }
+.auth-brand span { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.65rem; font-weight: 700; }
+.auth-canvas { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 90px 20px 35px; background: linear-gradient(rgba(248,239,224,.76), rgba(248,239,224,.9)), url('/images/ragouj-courtyard.jpg') center / cover fixed; }
+.auth-card { width: 100%; max-width: 490px; padding: 38px !important; border: 1px solid var(--shefarms-line); border-radius: 16px !important; background: var(--shefarms-paper) !important; box-shadow: 0 20px 50px rgba(56,41,30,.16) !important; color: var(--shefarms-ink); }
+.auth-card h2 { color: var(--shefarms-forest) !important; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; }
+.auth-card label { color: #57483a !important; }
+.auth-card input { border-color: #d9cbb7 !important; border-radius: 7px !important; background: #fffdf8 !important; }
+.auth-card button[type='submit'] { border-radius: 26px !important; background: var(--shefarms-terracotta) !important; color: white !important; font-weight: 650; }
+.auth-card button[type='submit']:hover { background: #8d3915 !important; }
+.auth-card a { color: var(--shefarms-terracotta) !important; }
+
+.profile-page { --profile-forest: #38291e; --profile-green: #858b68; --profile-terracotta: #a3451a; --profile-gold: #c9983d; --profile-ink: #392a20; --profile-muted: #756656; --profile-line: #e2d7c4; background-color: var(--shefarms-sand); background-image: linear-gradient(rgba(248,239,224,.88),rgba(248,239,224,.92)),url('/images/ragouj-courtyard.jpg'); }
+.profile-card { background: var(--shefarms-paper); border-color: var(--shefarms-line); }
+.profile-avatar { background: var(--shefarms-terracotta); }
+.profile-meta-list, .profile-stat, .profile-preference-group { background: #f2e9d9; border-color: var(--shefarms-line); }
+.profile-back-link, .profile-cancel-button { border-color: #d9c8b1 !important; color: var(--shefarms-forest) !important; }
+.profile-save-button { background: var(--shefarms-terracotta) !important; }
+.profile-save-button:hover { background: #8d3915 !important; }
+.profile-page h1, .profile-page h2, .profile-page h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+@media (max-width: 640px) {
+  .auth-card { padding: 26px !important; }
+  .auth-canvas { background-attachment: scroll; }
+  .public-page .page-hero { padding: 55px 0 48px; }
+  .public-page .about, .public-page .features, .public-page .contact, .public-page .values, .public-page .faq { padding: 42px 0; }
+}

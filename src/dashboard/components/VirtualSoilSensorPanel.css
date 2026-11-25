@@ -1,0 +1,48 @@
+.virtual-sensor-panel {
+  margin: 0 0 1.5rem;
+  padding: 1.4rem;
+  border: 1px solid #f2d4e3;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff 0%, #fff8fb 100%);
+  box-shadow: 0 8px 24px rgba(91, 33, 65, 0.06);
+}
+.virtual-sensor-heading, .sensor-controls-row, .sensor-identity, .sensor-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.virtual-sensor-heading h2 { margin: 0.15rem 0; color: #31233a; font-size: 1.25rem; }
+.virtual-sensor-heading p { margin: 0; color: #6b6170; font-size: 0.9rem; }
+.virtual-sensor-heading .virtual-sensor-eyebrow { display: flex; align-items: center; gap: 0.35rem; color: #be3979; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.09em; }
+.sensor-connection-pill { display: inline-flex; align-items: center; gap: 0.45rem; border-radius: 999px; padding: 0.4rem 0.7rem; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+.sensor-connection-pill span { width: 0.5rem; height: 0.5rem; border-radius: 100%; background: currentColor; }
+.sensor-connection-pill.is-online { color: #16834b; background: #e7f8ed; }
+.sensor-connection-pill.is-offline { color: #b64b41; background: #fff0ed; }
+.sensor-controls-row { margin: 1.1rem 0; padding: 1rem; border-radius: 12px; background: #fff; border: 1px solid #f0e8ed; flex-wrap: wrap; }
+.sensor-identity { justify-content: flex-start; color: #be3979; }
+.sensor-identity div { display: grid; gap: 0.15rem; }
+.sensor-identity strong { color: #382b3d; }
+.sensor-identity span, .sensor-identity small { color: #746a77; font-size: 0.82rem; }
+.sensor-action-buttons { justify-content: flex-end; flex-wrap: wrap; }
+.sensor-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; border: 0; border-radius: 8px; padding: 0.65rem 0.9rem; font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+.sensor-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.sensor-btn-primary { color: #fff; background: #279f4a; }
+.sensor-btn-secondary { color: #673552; background: #f7e8f0; }
+.sensor-btn-danger { color: #fff; background: #b74747; }
+.sensor-config-details, .sensor-manual-details { border-top: 1px solid #f0e8ed; padding: 0.85rem 0.2rem 0.2rem; }
+.sensor-config-details summary, .sensor-manual-details summary { color: #543b52; font-weight: 700; cursor: pointer; }
+.sensor-config-form, .sensor-manual-form { display: grid; gap: 0.9rem; margin-top: 1rem; }
+.sensor-config-fields { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.sensor-config-fields label, .sensor-manual-form > label, .sensor-range-item label { display: grid; gap: 0.35rem; color: #665b6b; font-size: 0.8rem; font-weight: 650; }
+.sensor-config-fields input, .sensor-manual-form input, .sensor-range-item input { width: 100%; min-width: 0; box-sizing: border-box; padding: 0.55rem; border: 1px solid #ded5df; border-radius: 7px; background: #fff; font: inherit; color: #352b3b; }
+.sensor-range-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.65rem; }
+.sensor-range-item { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; padding: 0.65rem; border: 1px solid #eee6ec; border-radius: 9px; }
+.sensor-range-item strong { grid-column: 1 / -1; color: #503d50; font-size: 0.8rem; }
+.sensor-range-item input { padding: 0.4rem; }
+.sensor-manual-form { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.sensor-inline-alert { margin-top: 0.8rem; padding: 0.75rem 0.9rem; border-radius: 8px; color: #79591d; background: #fff8df; font-size: 0.9rem; }
+.sensor-inline-alert.sensor-error { color: #9f3030; background: #fff0ee; }
+.sensor-inline-alert.sensor-success { color: #176a3a; background: #e9f8ee; }
+@media (max-width: 850px) { .sensor-config-fields, .sensor-range-grid, .sensor-manual-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .virtual-sensor-heading, .sensor-controls-row { align-items: flex-start; flex-direction: column; } .sensor-config-fields, .sensor-range-grid, .sensor-manual-form { grid-template-columns: 1fr; } .sensor-action-buttons { justify-content: flex-start; } }
